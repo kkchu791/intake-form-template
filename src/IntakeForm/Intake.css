@@ -1,0 +1,15 @@
+
+.paper {
+  padding: 30px;
+  height: 1000px;
+}
+
+.intake-title {
+  text-align: center;
+  margin: 30px;
+  text-transform: uppercase;
+}
+
+.submit-button {
+  background: #f1f1f9 !important;
+}

@@ -1,41 +1,34 @@
-import React, { useState } from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import './IntakeForm.css';
+import React from 'react';
+import Paper from "@material-ui/core/Paper";
+import "./IntakeForm.css"
+import { Formik, Form } from "formik";
+import ClinicFormGroup from './ClinicFormGroup';
+import PersonalInfoFormGroup from './PersonalInfoFormGroup';
 
-const renderInputField = (param, setFormData, intakeData) => {
-
+const IntakeForm = () => {
   return (
-    <div className="form-field">
-      <label htmlFor={param.field_name} className="label">
-        {param.text}
-      </label>
-
-      <Field 
-        type={param.field_name}
-        name={param.field_name}
-        placeholder={param.placeholder}
-        className="input-field"
-        onChange={(e) => setFormData(Object.assign({}, intakeData, {[`${param.field_name}`]: e.target.value})) }
-      />
-
-      <ErrorMessage name={param.field_name} component="div" />
-    </div>
+      <Paper elevation={10} className="paper">
+        <div className="intake-title">Intake Form</div>
+        
+        <div className="intake-form">
+          <Formik onSubmit={values => console.log(values)}>
+            {(props) => (
+              <Form>
+                <ClinicFormGroup {...props}/>
+                <PersonalInfoFormGroup {...props}/>            
+                <button
+                  type="submit"
+                  className="submit-button"
+                >
+                  Intake Person
+                </button>
+              </Form>
+            )}
+          </Formik>
+        </div>
+      </Paper>
   );
 }
 
-const IntakeForm = (props) => {
-  console.log(props, 'actions')
-  return (
-    <Form>
-      <div className="title">
-        {props.title}
-      </div>
-
-      <div className="form-inputs">
-        {props.params.map(param => renderInputField(param, props.setFormData, props.intakeData)) }
-      </div>
-    </Form>
-  )
-}
-
 export default IntakeForm;
+

@@ -1,15 +1,4 @@
-
-.paper {
-  padding: 30px;
-  height: 1000px;
-}
-
-.intake-title {
-  text-align: center;
-  margin: 30px;
-  text-transform: uppercase;
-}
-
-.submit-button {
-  background: #f1f1f9 !important;
+.top-header {
+  background: #6f7ce2;
+  height: 400px;
 }

@@ -1,4 +1,4 @@
-const clinic_params = [
+export const clinic_params = [
   {
      text: 'Clinic Attended',
      field_name: 'clinic_attended',
@@ -11,7 +11,15 @@ const clinic_params = [
    }
 ]
 
-
-
-
-export default clinic_params;
+export const personal_info_params = [
+  {
+     text: 'First Name',
+     field_name: 'first_name',
+     placeholder: 'first name',
+   },
+   {
+     text: 'Last Name',
+     field_name: 'last_name',
+     placeholder: 'last name',
+   }
+]
